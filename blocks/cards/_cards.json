@@ -39,14 +39,20 @@
           "component": "reference",
           "valueType": "string",
           "name": "image",
-          "label": "Image",
+          "label": "Image2",
           "multi": false
         },
         {
           "component": "richtext",
           "name": "text",
           "value": "",
-          "label": "Text",
+          "label": "Text2",
+          "valueType": "string"
+        },
+        {
+          "component": "dgl",
+          "name": "dgl",
+          "label": "dgl",
           "valueType": "string"
         }
       ]
