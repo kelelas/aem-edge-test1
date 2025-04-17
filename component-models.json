@@ -133,6 +133,12 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
+      },
+      {
+        "component": "dgl",
+        "name": "dgl",
+        "label": "dgl",
+        "valueType": ""
       }
     ]
   },

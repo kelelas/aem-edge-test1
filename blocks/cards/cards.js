@@ -9,6 +9,15 @@ export default function decorate(block) {
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
+      const dglDiv = Array.from(div.children)?.find((child) => child.dataset?.aueProp === 'dgl');
+      if (dglDiv) {
+        try {
+          const jsonData = JSON.parse(dglDiv.innerText);
+          dglDiv.innerText = Object.values(jsonData).join('\n\n');
+        } catch (error) {
+          console.error('Invalid JSON in dglDiv:', error);
+        }
+      }
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
