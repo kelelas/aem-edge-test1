@@ -36,11 +36,51 @@
       "id": "card",
       "fields": [
         {
+          "component": "select",
+          "name": "linkType",
+          "label": "Link Type",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "DAM",
+              "value": "dam"
+            },
+            {
+              "name": "DGL",
+              "value": "dgl"
+            }
+          ]
+        },
+        {
           "component": "reference",
           "valueType": "string",
           "name": "image",
           "label": "Image",
-          "multi": false
+          "multi": false,
+          "condition": {
+            "===": [
+              {
+                "var": "linkType"
+              },
+              "dam"
+            ]
+          },
+          "required": true
+        },
+        {
+          "component": "dgl",
+          "name": "dgl",
+          "label": "dgl",
+          "valueType": "",
+          "condition": {
+            "===": [
+              {
+                "var": "linkType"
+              },
+              "dgl"
+            ]
+          },
+          "required": true
         },
         {
           "component": "richtext",
@@ -48,12 +88,6 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
-        },
-        {
-          "component": "dgl",
-          "name": "dgl",
-          "label": "dgl",
-          "valueType": ""
         }
       ]
     }
